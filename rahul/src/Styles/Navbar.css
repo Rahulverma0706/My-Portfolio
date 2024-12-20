@@ -1,0 +1,8 @@
+#navbar{
+    display: flex;
+    margin: auto;
+    text-align: center;
+}
+#navbar div{
+    display: flex;
+}
