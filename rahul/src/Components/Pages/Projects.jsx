@@ -1,5 +1,6 @@
-'use client'
-
+'use client';
+import { SiReactrouter, SiChakraui } from 'react-icons/si';
+import { FaCss3Alt, FaHtml5 } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import {
   Container,
@@ -13,10 +14,7 @@ import {
   Icon,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { IoAnalyticsSharp, IoLogoBitcoin, IoSearchSharp } from 'react-icons/io5';
 import { ReactIcon } from '@chakra-ui/icons';
-import { IconBase } from 'react-icons/lib';
-
 
 const Feature = ({ text, icon, iconBg }) => {
   return (
@@ -29,7 +27,6 @@ const Feature = ({ text, icon, iconBg }) => {
   );
 };
 
-// PropTypes for Feature
 Feature.propTypes = {
   text: PropTypes.string.isRequired,
   iconBg: PropTypes.string.isRequired,
@@ -38,8 +35,9 @@ Feature.propTypes = {
 
 const SplitWithImage = () => {
   return (
-    <Container maxW={'5xl'} py={12}>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+    <Container maxW={'6xl'} py={12}>
+      {/* H&M Section */}
+      <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={12}>
         <Stack spacing={4}>
           <Text
             textTransform={'uppercase'}
@@ -50,11 +48,11 @@ const SplitWithImage = () => {
             p={2}
             alignSelf={'flex-start'}
             rounded={'md'}>
-            Our Story
+            H & M
           </Text>
-          <Heading>H & M Branding</Heading>
+          <Heading>Fashion & Branding</Heading>
           <Text color={'gray.500'} fontSize={'lg'}>
-          "Developed a responsive e-commerce website by cloning H&M’s online store. The project focused on front-end design, implementing features like product display, navigation, and a shopping cart. Utilized HTML, CSS, and JavaScript for dynamic content and user interaction, ensuring a smooth and user-friendly experience across devices"
+            Developed a responsive e-commerce website by cloning H&M’s online store. The project focused on front-end design, implementing features like product display, navigation, and a shopping cart. Utilized HTML, CSS, and JavaScript for dynamic content and user interaction, ensuring a smooth and user-friendly experience across devices.
           </Text>
           <Stack
             spacing={4}
@@ -67,29 +65,40 @@ const SplitWithImage = () => {
               text={'React JS'}
             />
             <Feature
-              icon={<Icon as={react} color={'green.500'} w={5} h={5} />}
+              icon={<Icon as={FaHtml5} color={'green.500'} w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'Financial Planning'}
+              text={'HTML & CSS'}
             />
             <Feature
-              icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
+              icon={<Icon as={SiReactrouter} color={'purple.500'} w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
-              text={'Market Analysis'}
+              text={'React-Router-Dom'}
             />
           </Stack>
         </Stack>
-        <Flex>
+        <Flex
+          borderRadius="md"
+          overflow="hidden"
+          boxShadow="lg"
+          transition="transform 0.3s, box-shadow 0.3s"
+          _hover={{
+            transform: 'scale(1.05)',
+            boxShadow: '2xl',
+          }}
+          align="center"
+          justify="center">
           <Image
-            
             alt={'feature image'}
-            src={
-              '../public/images/Project1.png'
-            }
-            objectFit={'cover'}
+            src={'/images/H&MCloneSS.png'}
+            objectFit={'contain'}
+            width="100%"
+            height="100%"
           />
         </Flex>
       </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+
+      {/* Big-Basket Section */}
+      <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={12} mt={10}>
         <Stack spacing={4}>
           <Text
             textTransform={'uppercase'}
@@ -100,12 +109,11 @@ const SplitWithImage = () => {
             p={2}
             alignSelf={'flex-start'}
             rounded={'md'}>
-            Our Story
+            Big-Basket
           </Text>
-          <Heading>Asos Clothing</Heading>
+          <Heading>Grocery and Beverages</Heading>
           <Text color={'gray.500'} fontSize={'lg'}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-            eirmod tempor invidunt ut labore
+            Developed a fully responsive e-commerce website replicating Big Basket platform. The project emphasizes user-friendly design, implementing features like category browsing, a shopping cart, and secure checkout. Leveraged React.js and Chakra UI for front-end development and ensured seamless functionality across all devices.
           </Text>
           <Stack
             spacing={4}
@@ -113,30 +121,39 @@ const SplitWithImage = () => {
               <StackDivider borderColor={useColorModeValue('gray.100', 'gray.700')} />
             }>
             <Feature
-              icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
+              icon={<Icon as={ReactIcon} color={'yellow.500'} w={5} h={5} />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-              text={'Business Planning'}
+              text={'React JS'}
             />
             <Feature
-              icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
+              icon={<Icon as={SiChakraui} color={'green.500'} w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'Financial Planning'}
+              text={'Chakra UI'}
             />
             <Feature
-              icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
+              icon={<Icon as={FaCss3Alt} color={'purple.500'} w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
-              text={'Market Analysis'}
+              text={'CSS'}
             />
           </Stack>
         </Stack>
-        <Flex>
+        <Flex
+          borderRadius="md"
+          overflow="hidden"
+          boxShadow="lg"
+          transition="transform 0.3s, box-shadow 0.3s"
+          _hover={{
+            transform: 'scale(1.05)',
+            boxShadow: '2xl',
+          }}
+          align="center"
+          justify="center">
           <Image
-            rounded={'md'}
             alt={'feature image'}
-            src={
-              '../public/images/Project2.png'
-            }
-            objectFit={'cover'}
+            src={'/images/bigBasketCloneSS.png'}
+            objectFit={'contain'}
+            width="100%"
+            height="100%"
           />
         </Flex>
       </SimpleGrid>

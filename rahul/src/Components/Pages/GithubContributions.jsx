@@ -11,8 +11,10 @@ const GitHubContributionChart = () => {
     <>
       <div style={styles.container}>
         <h2 style={styles.header}>My GitHub Contributions</h2>
-        <div style={styles.chartContainer}>
-          <GitHubCalendar username={username} theme={theme} blockSize={calculateBlockSize()} />
+        <div style={styles.scrollableContainer}>
+          <div style={styles.chartContainer}>
+            <GitHubCalendar username={username} theme={theme} blockSize={calculateBlockSize()} />
+          </div>
         </div>
       </div>
       <div style={styles.statsContainer}>
@@ -65,6 +67,14 @@ const styles = {
     marginBottom: '20px',
     fontSize: '24px',
     color: '#333',
+  },
+  scrollableContainer: {
+    overflowX: 'auto',
+    whiteSpace: 'nowrap',
+    padding: '10px',
+    marginBottom: '20px',
+    border: '1px solid #ddd',
+    borderRadius: '8px',
   },
   chartContainer: {
     display: 'inline-block',

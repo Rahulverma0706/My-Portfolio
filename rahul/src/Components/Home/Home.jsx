@@ -19,7 +19,7 @@ export default function SplitScreen() {
                   objectFit={'cover'}
                   margin={'auto'}
                   src={
-                    '../public/images/photo.png'
+                    '../public/images/passportSizePhoto.png'
                   }
                 />
               </Flex>

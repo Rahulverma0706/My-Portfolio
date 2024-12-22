@@ -1,11 +1,10 @@
-import WithAction from './Components/Navbar'
-import SmallCentered from './Components/Footer'
-import SplitScreen from './Components/Home'
-import Skills from './Components/Skills'
-
-import GitHubContributionChart from './Components/GithubContributions'
+import WithAction from './Components/Navbar/Navbar'
+import SmallCentered from './Components/Footer/Footer'
+import SplitScreen from './Components/Home/Home'
+import Skills from './Components/Pages/Skills'
 import { Routes, Route } from 'react-router-dom'
-import SplitWithImage from './Components/Projects'
+import SplitWithImage from './Components/Pages/Projects'
+import ConnectMe from './Components/Pages/ContactMe'
 
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
         <Route path="/" element={<SplitScreen/>} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<SplitWithImage/>} />
-        <Route path="/contact" element={<GitHubContributionChart/>} />
+        <Route path="/contact" element={<ConnectMe/>} />
     </Routes>
 
     <SmallCentered/> 
