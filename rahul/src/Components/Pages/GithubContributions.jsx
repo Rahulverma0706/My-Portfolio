@@ -1,5 +1,4 @@
 import GitHubCalendar from 'react-github-calendar';
-
 const GitHubContributionChart = () => {
   const username = 'Rahulverma0706';
   const theme = {

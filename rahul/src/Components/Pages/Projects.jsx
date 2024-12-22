@@ -15,7 +15,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { ReactIcon } from '@chakra-ui/icons';
-
 const Feature = ({ text, icon, iconBg }) => {
   return (
     <Stack direction={'row'} align={'center'}>
@@ -26,13 +25,11 @@ const Feature = ({ text, icon, iconBg }) => {
     </Stack>
   );
 };
-
 Feature.propTypes = {
   text: PropTypes.string.isRequired,
   iconBg: PropTypes.string.isRequired,
   icon: PropTypes.element,
 };
-
 const SplitWithImage = () => {
   return (
     <Container maxW={'6xl'} py={12}>
@@ -96,7 +93,6 @@ const SplitWithImage = () => {
           />
         </Flex>
       </SimpleGrid>
-
       {/* Big-Basket Section */}
       <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={12} mt={10}>
         <Stack spacing={4}>
@@ -160,5 +156,4 @@ const SplitWithImage = () => {
     </Container>
   );
 };
-
 export default SplitWithImage;

@@ -13,7 +13,7 @@ import {
   useColorModeValue,
   useToast,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useState} from 'react';
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const ConnectMe = () => {
@@ -71,7 +71,7 @@ const ConnectMe = () => {
           duration: 3000,
           isClosable: true,
         });
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
+        setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         toast({
           title: 'Error',
