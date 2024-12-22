@@ -16,7 +16,7 @@ import {
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 const Links = [
   { name: 'Home', path: '/' },
@@ -28,15 +28,16 @@ const Links = [
 const NavLink = ({ children, to }) => {
   return (
     <Box
-      as={Link} // Use Link from react-router-dom
-      to={to} // Specify the route
+      as={Link}
+      to={to}
       px={2}
       py={1}
       rounded={'md'}
       _hover={{
         textDecoration: 'none',
         bg: useColorModeValue('gray.200', 'gray.700'),
-      }}>
+      }}
+    >
       {children}
     </Box>
   );
@@ -44,7 +45,7 @@ const NavLink = ({ children, to }) => {
 
 NavLink.propTypes = {
   children: PropTypes.node.isRequired,
-  to: PropTypes.string.isRequired, // Add 'to' prop validation
+  to: PropTypes.string.isRequired,
 };
 
 export default function WithAction() {
@@ -62,7 +63,6 @@ export default function WithAction() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            {/* <Box Link to= "/">Home</Box> */}
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
                 <NavLink key={link.name} to={link.path}>
@@ -72,13 +72,17 @@ export default function WithAction() {
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
+            {/* Download Resume Button */}
             <Button
+              as="a"
+              href="\public\resume\RahulVerma-FullStackWebDeveloper-Resume.pdf" // Path to your resume file in the 'public' folder
+              download // Enables downloading of the file
               variant={'solid'}
               colorScheme={'teal'}
               size={'sm'}
               mr={4}
-              leftIcon={<AddIcon />}>
-              Action
+            >
+              Download Resume
             </Button>
             <Menu>
               <MenuButton
@@ -86,7 +90,8 @@ export default function WithAction() {
                 rounded={'full'}
                 variant={'link'}
                 cursor={'pointer'}
-                minW={0}>
+                minW={0}
+              >
                 <Avatar
                   size={'sm'}
                   src={
@@ -95,10 +100,10 @@ export default function WithAction() {
                 />
               </MenuButton>
               <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
+                <MenuItem>Profile</MenuItem>
+                <MenuItem>Settings</MenuItem>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem>Logout</MenuItem>
               </MenuList>
             </Menu>
           </Flex>
