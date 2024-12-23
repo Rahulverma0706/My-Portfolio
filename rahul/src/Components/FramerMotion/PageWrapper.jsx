@@ -21,7 +21,7 @@ const PageWrapper = ({ children }) => {
     style={{
         position: 'relative',
         overflow:'auto',
-        // minHeight: '100vh',
+        minHeight: '100vh',
         width: '100%',
       }}
     >

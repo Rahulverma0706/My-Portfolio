@@ -1,28 +1,30 @@
 'use client'
 import {
-  Button,
   Flex,
   Heading,
-  Image,
   Stack,
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react'
-
 export default function SplitScreen() {
   return (
-    <Stack minH={'60vh'} direction={{ base: 'column', md: 'row' }}>
-              <Flex flex={1}>
-                <Image rounded={'full'}
-                  alt={'Login Image'}
-                  objectFit={'cover'}
-                  margin={'auto'}
-                  src={
-                    'images/passportSizePhoto.png'
-                  }
-                />
-              </Flex>
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+    <Stack h={'40vh'} direction={{ base: 'column', md: 'row' }} position="relative">
+      {/* Video Background */}
+      
+      <Flex className="video-background">
+        <video
+          src="https://cdn.pixabay.com/video/2023/05/17/163491-827845629.mp4"
+          autoPlay
+          muted
+          loop
+          
+          width="100%"
+          height="40%"
+        />
+      </Flex>
+
+      {/* Content */}
+      <Flex flex={1}  marginLeft={'5%'} p={8}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
             <Text
@@ -31,37 +33,40 @@ export default function SplitScreen() {
               _after={{
                 content: "''",
                 width: 'full',
-                height: useBreakpointValue({ base: '20%', md: '30%' }),
+                height: useBreakpointValue({ base: '20%', md: '10%' }),
                 position: 'absolute',
                 bottom: 1,
                 left: 0,
-                bg: 'blue.400',
+                bg: 'white',
                 zIndex: -1,
-              }}>
-              Hello, 
+              }}
+            >
+              Hello,
             </Text>
-            <br />{' '}
-            <Text color={'blue.400'} as={'span'}>
-              I am Rahul Verma
-            </Text>{' '}
+            <br />
+            <Text color={'white'} as={'span'} fontSize={'100px'} >
+              I'm Rahul Verma
+            </Text>
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            Passionate, to develope greate and interactive digital products, with the help of different kind tech stacks.
+            "Passionate about creating innovative and interactive digital experiences, leveraging diverse tech stacks to build impactful solutions."
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-            <Button
-              rounded={'full'}
-              bg={'blue.400'}
-              color={'white'}
-              _hover={{
-                bg: 'blue.500',
-              }}>
-              About me
-            </Button>
-            <Button rounded={'full'}>Projects</Button>
+            {/* Add any buttons or content here */}
           </Stack>
         </Stack>
       </Flex>
+
+      {/* Image Section */}
+      {/* <Flex flex={1} justify={'center'} align={'center'}>
+        <Image
+          // rounded={'full'}
+          alt={'Passport Image'}
+          objectFit={'cover'}
+          margin={'70px'}
+          src={'images/DeveloperSitHomePage.svg'}
+        />
+      </Flex> */}
     </Stack>
   )
 }

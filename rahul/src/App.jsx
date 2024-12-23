@@ -8,7 +8,7 @@ import ConnectMe from './Components/Pages/ContactMe';
 import Preloader from './Components/FramerMotion/Preloader';
 import { AnimatePresence } from 'framer-motion';
 import PageWrapper from './Components/FramerMotion/PageWrapper';
-
+import './App.css'
 function App() {
   const location = useLocation();
 
@@ -16,7 +16,7 @@ function App() {
     <>
       <WithAction />
       <Preloader />
-      <div>
+      <div className="lock-scroll hide-scrollbar">
         <AnimatePresence mode='wait'>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<PageWrapper><SplitScreen /></PageWrapper>} />

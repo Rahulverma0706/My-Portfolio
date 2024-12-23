@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "../../App.css";
 import GitHubContributionChart from "./GithubContributions";
+import { Flex } from "@chakra-ui/react";
+
 
 const Skills = () => {
   const [comments, setComments] = useState({}); // Stores comments for each image
@@ -83,6 +85,15 @@ const Skills = () => {
 
   return (
     <>
+
+    <img src="/images/DeveloperSitSkillPage.svg" alt="DeveloperSitSkillPage" 
+    style={{
+
+      position:'absolute',
+      opacity:'20%',
+      top:'35%',
+      right:'35%'
+      }} />
       <div
         style={{
           display: "grid",
@@ -93,6 +104,16 @@ const Skills = () => {
           maxWidth: "1200px",
         }}
       >
+         <Flex className="skill-page-video-background">
+        <video
+          src="videos\SkillPageVideo.mp4"
+          autoPlay
+          muted
+          loop
+          width="100%"
+        />
+      </Flex>
+      
         {imageData.map((img, index) => (
           <div
             key={index}
@@ -100,9 +121,10 @@ const Skills = () => {
               textAlign: "center",
               transition: "transform 0.3s ease-in-out",
               cursor: "pointer",
-              border: "1px solid #ddd",
+              // border: "1px solid #ddd",
               borderRadius: "10px",
               overflow: "hidden",
+              backgroundColor:'white',
               boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
             }}
             onClick={() => handleImageClick(index)}
