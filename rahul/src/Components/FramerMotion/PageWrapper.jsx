@@ -1,17 +1,29 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const PageWrapper = ({ children }) => {
+  useEffect(() => {
+    // Scroll to top on every page change
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <motion.div
-      initial={{ y: '100%', opacity: 0 }} // Start from the bottom
-      animate={{ y: 0, opacity: 1 }} // Slide to center
-      exit={{ y: '-100%', opacity: 0 }} // Exit to the top
-      
+      initial={{ x: '100%', opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: '-100%', opacity: 0 }}
       transition={{
-        duration: 0.4, // Adjust for smoothness
-        ease: 'easeOut',
+        type: 'spring',
+        stiffness: 200, 
+        damping: 25,    
+        duration: 0.4, 
+    }}
+    style={{
+        position: 'relative',
+        overflow:'auto',
+        // minHeight: '100vh',
+        width: '100%',
       }}
-      style={{ minHeight: '100vh', width: '100%' }}
     >
       {children}
     </motion.div>
