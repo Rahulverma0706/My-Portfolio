@@ -84,7 +84,7 @@ export default function WithAction() {
             >
               Download Resume
             </Button>
-            <Menu>
+            {/* <Menu>
               <MenuButton
                 as={Button}
                 rounded={'full'}
@@ -105,7 +105,7 @@ export default function WithAction() {
                 <MenuDivider />
                 <MenuItem>Logout</MenuItem>
               </MenuList>
-            </Menu>
+            </Menu> */}
           </Flex>
         </Flex>
 

@@ -79,7 +79,7 @@ const Footer = () => {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© 2024 Your Company. All rights reserved</Text>
+          <Text>© 2025 Rahul Verma All rights reserved</Text>
         </Container>
       </Box>
     </Box>
