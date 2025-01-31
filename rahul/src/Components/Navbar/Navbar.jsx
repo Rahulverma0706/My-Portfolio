@@ -53,6 +53,8 @@ export default function WithAction() {
 
   return (
     <>
+    <img src="/resume/RahulVerma-FullStackWebDeveloper-Resume.pdf" style={{ display: "none" }} />
+
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
@@ -75,7 +77,7 @@ export default function WithAction() {
             {/* Download Resume Button */}
             <Button
               as="a"
-              href="\public\resume\RahulVerma-FullStackWebDeveloper-Resume.pdf" // Path to your resume file in the 'public' folder
+              href="\RahulVerma-FullStackWebDeveloper-Resume.pdf" // Path to your resume file in the 'public' folder
               download // Enables downloading of the file
               variant={'solid'}
               colorScheme={'teal'}
