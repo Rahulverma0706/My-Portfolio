@@ -77,7 +77,7 @@ export default function WithAction() {
             {/* Download Resume Button */}
             <Button
               as="a"
-              href="\RahulVerma-FullStackWebDeveloper-Resume.pdf" // Path to your resume file in the 'public' folder
+              href="/RahulVerma-FullStackWebDeveloper-Resume.pdf" // Path to your resume file in the 'public' folder
               download // Enables downloading of the file
               variant={'solid'}
               colorScheme={'teal'}
